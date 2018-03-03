@@ -1,0 +1,36 @@
+<form #frmUsuario="ngForm" (ngSubmit)="adicionar(frmUsuario)">
+ 
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-panel header="Novo Usuário" [toggleable]="true">
+        
+ 
+         
+          <input [required]="true" pInputText name="nome" placeholder="Nome" ngModel/>
+  
+          <input [required]="true" pInputText name="email" placeholder="E-mail" ngModel/>
+     
+          <input [required]="true" pInputText name="nickname" placeholder="Nickname" ngModel/>
+  
+          <input [required]="true" type="password" pInputText name="senha" placeholder="Senha" ngModel/>
+      
+          <button [disabled]="frmUsuario.invalid" pButton type="submit" label="Cadastrar"></button>
+        
+        
+      </p-panel>
+    </div>    
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-panel header="Gerenciador de Usuário" [toggleable]="true">
+        <p-dataTable [value]="usuarios">
+          <p-column field="nome" header="Nome" [style]="{'text-align':'center'}"></p-column>
+          <p-column field="nickname" header="Apelido" [style]="{'text-align':'center'}"></p-column>
+          <p-column field="ativo" header="Ativado" [style]="{'text-align':'center'}"></p-column>
+        </p-dataTable>
+      </p-panel>
+    </div>    
+  </div>
+
+</form>
